@@ -4,8 +4,11 @@ import { useRecoilState } from 'recoil';
 //Component
 import ParcelListItem from '../component/ParcelListItem';
 import Search from '../component/Search.jsx';
+import FilterButton from '../component/FilterButton';
+import Sorter from "../component/Sorter";
 
 // Custom JS Functions & Variables
+import { dataSort } from '../scripts/sorterFunctions';
 
 //State
 import { listState } from '../state/listState';
@@ -27,6 +30,7 @@ export default function NormalPage() {
           });
           const parsedData = await response.json();
           setParcelListData(parsedData);
+          setDisplayedParcels(dataSort(parsedData, 'parcel_id'));
           setFetchStatus('success');
         } catch (error) {
           setFetchStatus('error');
@@ -37,7 +41,7 @@ export default function NormalPage() {
       return () => abortFetch.abort();
     }, [instaOrders, setParcelListData]);
   
-    const jsxParcels = parcelListData.map(parcel => {
+    const jsxParcels = displayedParcels.map(parcel => {
       return <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />;
     });
   
@@ -46,8 +50,11 @@ export default function NormalPage() {
         <div className="filter-and-search">
           <Search
             parcelArray={parcelListData}
+            setParcelArray={setDisplayedParcels}
           />
         </div>
+        <FilterButton parcelArray={parcelListData} setDisplayedParcels={setDisplayedParcels} />
+        <Sorter setDisplayedParcels={setDisplayedParcels} displayedParcels={displayedParcels}/>
         {fetchStatus === 'success' && jsxParcels}
       </div>
     );
