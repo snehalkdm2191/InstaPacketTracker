@@ -5,7 +5,7 @@ import { dataSort, reverseSort } from "../scripts/sorterFunctions";
 
 export default function Sorter({ setDisplayedParcels, displayedParcels }) {
   // Local state
-  const [sortDirection, setSortDirection] = useState({ parcel_id: "down" });
+  const [sortDirection, setSortDirection] = useState({ id: "down" });
 
   // Methods
   function sortHandler(sortType) {
@@ -20,9 +20,9 @@ export default function Sorter({ setDisplayedParcels, displayedParcels }) {
 
   return (
     <div className="sort-buttons">
-      <button className="s-button" onClick={() => sortHandler("parcel_id")}>
+      <button className="s-button" onClick={() => sortHandler("id")}>
         Sort By ID{" "}
-        <i className={`fas fa-chevron-${sortDirection["parcel_id"]}`} />
+        <i className={`fas fa-chevron-${sortDirection["id"]}`} />
       </button>
       <button
         className="s-button sc-button"

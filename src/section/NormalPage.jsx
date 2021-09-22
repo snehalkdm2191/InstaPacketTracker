@@ -48,12 +48,9 @@ export default function NormalPage() {
     return (
       <div className="body parcel-list-body">
         <div className="filter-and-search">
-          <Search
-            parcelArray={parcelListData}
-            setParcelArray={setDisplayedParcels}
-          />
+          <Search parcelArray={parcelListData} setParcelArray={setDisplayedParcels}/>
+          <FilterButton parcelArray={parcelListData} setDisplayedParcels={setDisplayedParcels} />
         </div>
-        <FilterButton parcelArray={parcelListData} setDisplayedParcels={setDisplayedParcels} />
         <Sorter setDisplayedParcels={setDisplayedParcels} displayedParcels={displayedParcels}/>
         {fetchStatus === 'success' && jsxParcels}
       </div>

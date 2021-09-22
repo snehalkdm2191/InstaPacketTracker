@@ -16,7 +16,7 @@ export default function FilterButton({parcelArray, setDisplayedParcels}) {
   return (
     <div class="dropdown">
       <button
-        class="btn btn-secondary dropdown-toggle"
+        className="button"
         type="button"
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
