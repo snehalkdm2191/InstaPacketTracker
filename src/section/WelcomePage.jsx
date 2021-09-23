@@ -7,7 +7,7 @@ export default function WelcomePage() {
   const history = useHistory();
   return (
     <div className="welcome-section">
-      <img className="welcome-bg" src={welcomeBg} alte="welcome bg"/>
+      <img className="welcome-bg" src={welcomeBg} alt="welcome bg"/>
       <div className="welcome-content text-center">
         <h1>Insta Package Tracker</h1>
         <p>

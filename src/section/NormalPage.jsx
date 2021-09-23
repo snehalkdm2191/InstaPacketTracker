@@ -6,8 +6,10 @@ import Sorter from "../component/Sorter";
 import ParcelModal from "../component/ParcelModal";
 import Search from "../component/Search";
 // Custom JS Functions & Variables
-import { dataSort } from "../scripts/sorterFunctions";
+import { dataSort } from "../scripts/SorterFunctions";
 import storageKey from "../scripts/StorageKey";
+//data
+import BackUpData from "../data/insta-orders.json";
 
 export default function NormalPage({setModal}) {
   const [parcelListData, setParcelListData] = useState([]);
@@ -18,14 +20,21 @@ export default function NormalPage({setModal}) {
     fetch(storageKey)
       .then((response) => response.json())
       .then((data) => onSuccess(data))
-      .catch((error) => setFetchStatus("error"));
+      .catch((error) => onFail(error));
   }, []);
 
   function onSuccess(data) {
     setParcelListData(data);
-    setDisplayedParcels(dataSort(data, "id"));
+    setDisplayedParcels(dataSort(data, "parcel_id"));
     setFetchStatus("success");
   }
+
+  function onFail(error) {
+    setParcelListData(BackUpData); // Back up plan in case of issue
+    setDisplayedParcels(dataSort(BackUpData, "parcel_id"));
+    setFetchStatus("success");
+  }
+
 
  const pacelDetails = displayedParcels.map((parcel) => {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 //functions
-import { dataFilter } from "../scripts/filterFunction";
-import { dataSort } from "../scripts/sorterFunctions";
+import { dataFilter } from "../scripts/FilterFunction";
+import { dataSort } from "../scripts/SorterFunctions";
 
 export default function FilterButton({parcelArray, setDisplayedParcels}) {
   function clickHandler(filterType) {

@@ -9,29 +9,31 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../img/welcome-bg.jpg");
+  overflow: hidden;
 }
 .welcome-bg {
   margin-top: -17%;
   max-width: 100%;
   height: auto;
+  opacity: 0.5;
 }
 .welcome-content {
   margin: 0;
   position: absolute;
-  top: 40%;
-  left: 45%;
+  top: 45%;
+  left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
 .welcome-content{
     h1{
-        color: #666;
+        color: #000;
         font-weight: 600;
     }
     p{
         color: #000;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 600;
     }
 }
 .btn-track {
@@ -48,5 +50,6 @@ body {
 @media screen and (min-width: 800px) {
   .welcome-bg {
     margin-top: -4%;
+    opacity: 5;
   }
 }
