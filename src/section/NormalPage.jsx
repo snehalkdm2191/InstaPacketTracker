@@ -1,58 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
-
+import React, { useEffect, useState } from "react";
 //Component
-import ParcelListItem from '../component/ParcelListItem';
-import Search from '../component/Search.jsx';
-import FilterButton from '../component/FilterButton';
+import ParcelListItem from "../component/ParcelListItem";
+import FilterButton from "../component/FilterButton";
 import Sorter from "../component/Sorter";
-
+import ParcelModal from "../component/ParcelModal";
+import Search from "../component/Search";
 // Custom JS Functions & Variables
-import { dataSort } from '../scripts/sorterFunctions';
+import { dataSort } from "../scripts/sorterFunctions";
+import storageKey from "../scripts/StorageKey";
 
-//State
-import { listState } from '../state/listState';
+export default function NormalPage({setModal}) {
+  const [parcelListData, setParcelListData] = useState([]);
+  const [displayedParcels, setDisplayedParcels] = useState([]);
+  const [fetchStatus, setFetchStatus] = useState("loading");
+  
+  useEffect(() => {
+    fetch(storageKey)
+      .then((response) => response.json())
+      .then((data) => onSuccess(data))
+      .catch((error) => setFetchStatus("error"));
+  }, []);
 
-export default function NormalPage() {
-    const [parcelListData, setParcelListData] = useRecoilState(listState);
-    const [displayedParcels, setDisplayedParcels] = useState([]);
-    const [fetchStatus, setFetchStatus] = useState('loading');
-    const instaOrders = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  
-    // API call to populate parcel arrays.
-    useEffect(() => {
-      const abortFetch = new AbortController();
-      const fetchData = async () => {
-        try {
-          const response = await fetch(instaOrders, {
-            mode: 'cors',
-            signal: abortFetch.signal
-          });
-          const parsedData = await response.json();
-          setParcelListData(parsedData);
-          setDisplayedParcels(dataSort(parsedData, 'parcel_id'));
-          setFetchStatus('success');
-        } catch (error) {
-          setFetchStatus('error');
-          console.log(error);
-        }
-      };
-      fetchData();
-      return () => abortFetch.abort();
-    }, [instaOrders, setParcelListData]);
-  
-    const jsxParcels = displayedParcels.map(parcel => {
-      return <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} />;
-    });
-  
+  function onSuccess(data) {
+    setParcelListData(data);
+    setDisplayedParcels(dataSort(data, "id"));
+    setFetchStatus("success");
+  }
+
+ const pacelDetails = displayedParcels.map((parcel) => {
     return (
-      <div className="body parcel-list-body">
-        <div className="filter-and-search">
-          <Search parcelArray={parcelListData} setParcelArray={setDisplayedParcels}/>
-          <FilterButton parcelArray={parcelListData} setDisplayedParcels={setDisplayedParcels} />
-        </div>
-        <Sorter setDisplayedParcels={setDisplayedParcels} displayedParcels={displayedParcels}/>
-        {fetchStatus === 'success' && jsxParcels}
-      </div>
+      <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} onClick={() => setParcel(parcel)} />
     );
+  });
+  function setParcel(parcel) {
+    setModal(<ParcelModal parcel={parcel} />);
+  }
+
+  return (
+    <div className="body parcel-list-body">
+      <div className="filter-and-search">
+      <Search
+          parcelArray={parcelListData}
+          setDisplayedParcels={setDisplayedParcels}
+        />
+        <FilterButton
+          parcelArray={parcelListData}
+          setDisplayedParcels={setDisplayedParcels}
+        />
+      </div>
+      <Sorter
+        setDisplayedParcels={setDisplayedParcels}
+        displayedParcels={displayedParcels}
+      />
+      {fetchStatus === "success" && pacelDetails}
+    </div>
+  );
 }

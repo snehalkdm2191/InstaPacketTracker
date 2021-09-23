@@ -1,12 +1,11 @@
 // React Libraries
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-export default function ParcelListItem({ parcel }) {
+export default function ParcelListItem({ parcel, onClick }) {
   const { status, parcel_id, location_name, sender } = parcel;
 
   return (
-    <Link to={`/parcel/${parcel_id}`}>
+    <button onClick={onClick}>
       <div className="parcel-item-div">
         <span className="pl-item">
           <div className="pl-head">Parcel ID:</div>
@@ -25,6 +24,6 @@ export default function ParcelListItem({ parcel }) {
           <div>{status}</div>
         </span>
       </div>
-    </Link>
+    </button>
   );
 }
