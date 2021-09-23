@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // React Libraries
 import React, { useEffect, useState } from 'react';
-import { searchFilter } from '../scripts/filterFunction';
-import { dataSort } from '../scripts/sorterFunctions';
+import { searchFilter } from '../scripts/FilterFunction';
+import { dataSort } from '../scripts/SorterFunctions';
 
 function Search({ parcelArray, setDisplayedParcels }) {
   const [searchState, setSearchState] = useState({

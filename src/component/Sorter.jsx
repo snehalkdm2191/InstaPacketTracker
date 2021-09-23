@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // functions
-import { dataSort, reverseSort } from "../scripts/sorterFunctions";
+import { dataSort, reverseSort } from "../scripts/SorterFunctions";
 
 export default function Sorter({ setDisplayedParcels, displayedParcels }) {
   // Local state

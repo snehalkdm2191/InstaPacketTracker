@@ -1,70 +1,91 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 1. Insta Package Tracker
 
-In the project directory, you can run:
+Simple web app for our customers that displays a list of orders (or parcels) with some details they need to know like order status, ETAs, pickup locations, etc.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 2. Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+These are the instructions to run the project:
 
-### `npm test`
+1. Open the terminal and navigate to the folder where this readme file is located.
+2. Install the project dependencies by typing `npm install` on the terminal.
+3. Start the project by typing `npm start` on the terminal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 3. Usage instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get started press the Track button and you will redirect to parcel list page where you can see all the parcels. You can search for particular parcel by parcel id or sender name. If you want to see list as per status click on filter button and select status. You can also sort data by parcel id, location and status.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To view all details of parcel click on the parcel card and a pop up window will appear with all the parcel details and map to see the location.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 4. Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Beside React JS and it's own dependencies, this project uses:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. node-sass for styles.
+2. Bootstrap for styles.
+3. Firebase Cloud Storage for uploading and hosting the images of each shopping item.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 5. Project organization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 5.1 Requirement gathering
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The document submited by the fictional company as the coding test. It is highlighted using color to differenciate the functional, non-functional requrirements among other key elements.
 
-### Code Splitting
+[Google Docs link](https://docs.google.com/document/d/1sjAbGPOmn1eTfndz42vRL55N9QSxXyWxFnppE8okjEU/edit#heading=h.hin1qp9uc8ko)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### 5.2 Project spreadsheet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+A spreadsheet with the information related to the organization of the project.
 
-### Making a Progressive Web App
+[Google Spreadsheets link](https://docs.google.com/spreadsheets/d/1-xhMBoEfNwj0wg2ID_R7dopSA_VW864lpjkR9_uc9WM/edit#gid=0)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### 5.3 User flows
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A low detail diagram to visualize how the app will work.
 
-### Deployment
+The focus is to undertand what interactions like clicking buttons, filling forms, etc, in order to complete their objectives inside the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Whinsical User Flow board](https://whimsical.com/userflow-3Tm53KGV2yymyEro4dM6wU)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 5.4 Design mockup
+
+A low detail mockup to visualize how the app will look.
+
+The focus is on colors, fonts, branding and the positions of each element on the screen.
+
+[Figma link](https://www.figma.com/file/DU0oC39mfEJfqDJ0ZUMiSX/InstaPackageTracker?node-id=0%3A1)
+
+---
+
+### 5.5 Component tree
+
+The component tree allows to visualize the overall hierarchy of the project.
+[View latest version](https://whimsical.com/componenttree-X6gjmqYtd46Vx75ujXHiBt)
+
+
+## 6. Atribbutions
+
+This project uses the following external art assets:
+- Google translator
+- IBM Sans: An open source font.
+- Icons: Font awesome 5.
