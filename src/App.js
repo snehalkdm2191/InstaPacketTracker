@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //section
 import WelcomePage from "./section/WelcomePage";
 import NormalPage from "./section/NormalPage";
-import PackageInfo from "./section/PackageInfo";
 import Modal from "./component/Modal";
 
 export default function App() {
   const [modal, setModal] = useState(null);
   return (
     <div className="App">
+      <div id="google_translate_element"></div>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -18,9 +18,6 @@ export default function App() {
           </Route>
           <Route path="/parcels">
             <NormalPage setModal={setModal} />
-          </Route>
-          <Route path="/parcel/:id">
-            <PackageInfo />
           </Route>
         </Switch>
       </Router>
