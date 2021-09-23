@@ -1,10 +1,9 @@
 .parcel-list-body {
-  padding: 8px 4px 0 4px;
+  padding: 0px 5px 0 5px;
   display: flex;
   flex-direction: column;
   font-size: 12pt;
 }
-
 .filter-and-search {
   display: flex;
   margin-top: 8px;
@@ -12,69 +11,50 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .live-search-field {
   flex-grow: 1;
   height: 40px;
   padding: 0;
   margin-right: 8px;
-  border-radius: 0.28571429rem;
-  -webkit-border-radius: 0.28571429rem;
-  -moz-border-radius: 0.28571429rem;
-  -ms-border-radius: 0.28571429rem;
-  -o-border-radius: 0.28571429rem;
-  border: 1px solid var(--dark-grey);
+  border-radius: 4px;
+  border: 1px solid #fff;
 }
-
-.icon.button {
-  position: relative;
-  padding-left: 48px !important;
-  background: var(--dark-red);
-  color: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  /* max-width: 40%; */
-  flex-grow: 1;
-  max-height: 40px;
+.drp-filter{
+  display: block;
+  height: 40px;
+  padding: 1px 10px 0px;
+  background: #4e96b3;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+  border:none;
 }
-
-.button.sort-buttons {
+.sort-buttons {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 16px;
 }
-
-.button.s-button {
+.s-button {
   padding-left: 8px;
   padding-right: 8px;
+  margin-left: 2px;
   flex-grow: 1;
-  background: var(--dark-red);
+  font-size: 16px;
+  font-weight: 600;
+  background: #fff;
   color: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
-
-.button.s-button:hover {
-  background-color: rgb(218, 84, 84);
+.s-button:hover{
+  background: #92DECA;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
 }
-
-.button.sc-button {
-  margin-right: 0.52em;
-  margin-left: 0.26em;
-}
-
-.parcel-list-body a:link,
-.parcel-list-body a:visited,
-.parcel-list-body a:active {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 800px) {
   .parcel-list-body {
-    padding: 8px 8px 0 8px;
-  }
-}
-
-@media screen and (min-width: 480px) {
-.icon.button {
-    text-align: center;
+    padding: 0px 100px 0 100px;
   }
 }
