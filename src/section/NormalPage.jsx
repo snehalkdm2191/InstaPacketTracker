@@ -37,7 +37,7 @@ export default function NormalPage({setModal}) {
   }
 
   return (
-    <div className="body parcel-list-body">
+    <div className="parcel-list-body">
       <div className="filter-and-search">
       <Search
           parcelArray={parcelListData}

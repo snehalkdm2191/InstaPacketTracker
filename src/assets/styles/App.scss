@@ -1,20 +1,11 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap');
+
+/* section css */
+@import "./Welcome.scss";
+
 /* component css */
 @import "./NormalPage.scss";
 @import "./ParcelListItem.scss";
 @import "./Modal.scss";
-
-body {
-  top: 0px !important;
-}
-
-.goog-logo-link {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  color: transparent !important;
-}
-
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
+@import "./Translator.scss";

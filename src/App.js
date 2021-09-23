@@ -1,5 +1,5 @@
 import "./assets/styles/App.scss";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //section
 import WelcomePage from "./section/WelcomePage";
@@ -9,8 +9,10 @@ import Modal from "./component/Modal";
 export default function App() {
   const [modal, setModal] = useState(null);
   return (
-    <div className="App">
-      <div id="google_translate_element"></div>
+    <div className="welcome-body">
+      <div className="row">
+        <div id="google_translate_element"></div>
+      </div>
       <Router>
         <Switch>
           <Route exact path="/">

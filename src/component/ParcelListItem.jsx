@@ -5,7 +5,7 @@ export default function ParcelListItem({ parcel, onClick }) {
   const { status, parcel_id, location_name, sender } = parcel;
 
   return (
-    <button onClick={onClick}>
+    <button className="btn" onClick={onClick}>
       <div className="parcel-item-div">
         <span className="pl-item">
           <div className="pl-head">Parcel ID:</div>

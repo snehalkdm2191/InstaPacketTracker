@@ -1,0 +1,25 @@
+#google_translate_element{
+  z-index: 1001;
+}
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+.goog-te-combo{
+  display: block;
+  height: 40px;
+  padding: 1px 0 0;
+  background: #4e96b3;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+  border:none;
+  float: right;
+}

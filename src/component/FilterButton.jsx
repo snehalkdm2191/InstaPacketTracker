@@ -16,13 +16,13 @@ export default function FilterButton({parcelArray, setDisplayedParcels}) {
   return (
     <div class="dropdown">
       <button
-        className="button"
+        className="drp-filter"
         type="button"
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Filter by Status
+        <i class="fas fa-filter"></i> Filter by Status
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li onClick={() => clickHandler("all")}>All</li>
