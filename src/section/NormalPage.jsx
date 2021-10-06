@@ -6,16 +6,16 @@ import Sorter from "../component/Sorter";
 import ParcelModal from "../component/ParcelModal";
 import Search from "../component/Search";
 // Custom JS Functions & Variables
-import { dataSort } from "../scripts/SorterFunctions";
+import { dataSort } from "../scripts/sorterFunctions";
 import storageKey from "../scripts/StorageKey";
 //data
 import BackUpData from "../data/insta-orders.json";
 
-export default function NormalPage({setModal}) {
+export default function NormalPage({ setModal }) {
   const [parcelListData, setParcelListData] = useState([]);
   const [displayedParcels, setDisplayedParcels] = useState([]);
   const [fetchStatus, setFetchStatus] = useState("loading");
-  
+
   useEffect(() => {
     fetch(storageKey)
       .then((response) => response.json())
@@ -35,10 +35,13 @@ export default function NormalPage({setModal}) {
     setFetchStatus("success");
   }
 
-
- const pacelDetails = displayedParcels.map((parcel) => {
+  const pacelDetails = displayedParcels.map((parcel) => {
     return (
-      <ParcelListItem key={`${parcel.sender}-${parcel.id}`} parcel={parcel} onClick={() => setParcel(parcel)} />
+      <ParcelListItem
+        key={`${parcel.sender}-${parcel.id}`}
+        parcel={parcel}
+        onClick={() => setParcel(parcel)}
+      />
     );
   });
   function setParcel(parcel) {
@@ -48,7 +51,7 @@ export default function NormalPage({setModal}) {
   return (
     <div className="parcel-list-body">
       <div className="filter-and-search">
-      <Search
+        <Search
           parcelArray={parcelListData}
           setDisplayedParcels={setDisplayedParcels}
         />

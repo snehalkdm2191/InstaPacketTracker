@@ -1,20 +1,24 @@
-import React from "react";
-//functions
-import { dataFilter } from "../scripts/FilterFunction";
-import { dataSort } from "../scripts/SorterFunctions";
+// Project files
+import { dataFilter } from "../scripts/filterFunction";
+import { dataSort } from "../scripts/sorterFunctions";
 
-export default function FilterButton({parcelArray, setDisplayedParcels}) {
+export default function FilterButton({ parcelArray, setDisplayedParcels }) {
+  // Methods
   function clickHandler(filterType) {
     let filteredArray;
-    if (filterType === 'all') {
+
+    if (filterType === "all") {
       filteredArray = parcelArray;
     } else {
-      filteredArray = dataFilter(parcelArray, 'status', filterType);
+      filteredArray = dataFilter(parcelArray, "status", filterType);
     }
-    setDisplayedParcels(dataSort(filteredArray, 'parcel_id'));
+    setDisplayedParcels(dataSort(filteredArray, "parcel_id"));
   }
+
   return (
     <div class="dropdown">
+      {/* Button does not need type or is for your framework */}
+      {/* In any case this is a case of needing to abstract -1 to avoid Prettier moving stuff into 5 lines */}
       <button
         className="drp-filter"
         type="button"
@@ -26,10 +30,14 @@ export default function FilterButton({parcelArray, setDisplayedParcels}) {
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li onClick={() => clickHandler("all")}>All</li>
-        <li onClick={() => clickHandler('order-info-received')}>Order Info Received</li>
-        <li onClick={() => clickHandler('ready-for-pickup')}>Ready For Pickup</li>
-        <li onClick={() => clickHandler('on-the-way')}>On The Way</li>
-        <li onClick={() => clickHandler('delivered')}>Delivered</li>
+        <li onClick={() => clickHandler("order-info-received")}>
+          Order Info Received
+        </li>
+        <li onClick={() => clickHandler("ready-for-pickup")}>
+          Ready For Pickup
+        </li>
+        <li onClick={() => clickHandler("on-the-way")}>On The Way</li>
+        <li onClick={() => clickHandler("delivered")}>Delivered</li>
       </ul>
     </div>
   );

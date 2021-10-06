@@ -1,5 +1,5 @@
 // React Libraries
-import React from 'react';
+import React from "react";
 
 export default function ParcelListItem({ parcel, onClick }) {
   const { status, parcel_id, location_name, sender } = parcel;

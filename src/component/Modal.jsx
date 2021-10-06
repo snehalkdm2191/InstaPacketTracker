@@ -10,8 +10,10 @@ export default function Modal({ state }) {
     <>
       <div className="overlay-style" />
       <div className="modal-style">
-        <button className="btn btn-close btn-close-modal" onClick={() => setModal(null)}>
-        </button>
+        <button
+          className="btn btn-close btn-close-modal"
+          onClick={() => setModal(null)}
+        ></button>
         {modal}
       </div>
     </>,
